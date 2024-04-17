@@ -12,9 +12,12 @@
         </div>
         <div id="navbar">
           <ul class="nav navbar-nav">
-            <li><a href="<?php echo base_url(); ?>">Home</a></li>
-            <li><a href="<?php echo base_url(); ?>about.php">About</a></li>
-             <li><a href="<?php echo base_url(); ?>news">News</a></li>
+            <li><a href="<?=base_url()?>home">Home</a></li>
+            <li><a href="<?=base_url()?>about">About</a></li>
+            <li><a href="<?=base_url()?>news">News</a></li>
+            <li><a href="<?=base_url()?>news/new">Create News</a></li>
+
           </ul>
           <br>
     </nav>
+    <h1><?= esc($title) ?></h1>
