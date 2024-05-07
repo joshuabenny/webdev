@@ -2,39 +2,39 @@
 
 namespace App\Controllers;
 
-use App\Models\NewsModel;
+use App\Models\BlogsModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
 
-class News extends BaseController
+class Blogs extends BaseController
 {
     public function index()
     {
-        $model = model(NewsModel::class);
+        $model = model(BlogsModel::class);
 
         $data = [
-            'news'  => $model->getNews(),
-            'title' => 'News archive',
+            'blogs'  => $model->getBlogs(),
+            'title' => 'Blogs archive',
         ];
 
         return view('templates/header', $data)
-            . view('news/index')
+            . view('blogs/index')
             . view('templates/footer');
     }
 
     public function show($slug = null)
     {
-        $model = model(NewsModel::class);
+        $model = model(BlogsModel::class);
 
-        $data['news'] = $model->getNews($slug);
+        $data['blog'] = $model->getBlogs($slug);
 
-        if (empty($data['news'])) {
-            throw new PageNotFoundException('Cannot find the news item: ' . $slug);
+        if (empty($data['blog'])) {
+            throw new PageNotFoundException('Cannot find the blogs item: ' . $slug);
         }
 
-        $data['title'] = $data['news']['title'];
+        $data['title'] = $data['blog']['title'];
 
         return view('templates/header', $data)
-            . view('news/view')
+            . view('blogs/view')
             . view('templates/footer');
     }
     
@@ -42,8 +42,8 @@ class News extends BaseController
     {
         helper('form');
 
-        return view('templates/header', ['title' => 'Create a news item'])
-            . view('news/create')
+        return view('templates/header', ['title' => 'Create a blogs item'])
+            . view('blogs/create')
             . view('templates/footer');
     }
 
@@ -65,7 +65,7 @@ class News extends BaseController
         // Gets the validated data.
         $post = $this->validator->getValidated();
 
-        $model = model(NewsModel::class);
+        $model = model(BlogsModel::class);
 
         $model->save([
             'title' => $post['title'],
@@ -73,8 +73,8 @@ class News extends BaseController
             'body'  => $post['body'],
         ]);
 
-        return view('templates/header', ['title' => 'Create a news item'])
-            . view('news/success')
+        return view('templates/header', ['title' => 'Create a blogs item'])
+            . view('blogs/success')
             . view('templates/footer');
     }
 }

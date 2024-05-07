@@ -4,12 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class NewsModel extends Model
+class BlogsModel extends Model
 {
-    protected $table = 'news';
-    protected $allowedFields = ['title', 'slug', 'body'];
+    protected $table = 'blog';
+    protected $allowedFields = ['id', 'title', 'slug', 'body', 'date'];
     
-    public function getNews($slug = false)
+    public function getBlogs($slug = false)
     {
         if ($slug === false) {
             return $this->findAll();

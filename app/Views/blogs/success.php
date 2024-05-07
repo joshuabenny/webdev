@@ -1,0 +1,1 @@
+<p>Blogs item created successfully.</p>

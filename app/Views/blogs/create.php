@@ -3,7 +3,7 @@
 <?= session()->getFlashdata('error') ?>
 <?= validation_list_errors() ?>
 
-<form action="/news" method="post">
+<form action="/blogs" method="post">
     <?= csrf_field() ?>
 
     <label for="title">Title</label>
@@ -14,5 +14,5 @@
     <textarea name="body" cols="45" rows="4"><?= set_value('body') ?></textarea>
     <br>
 
-    <input type="submit" name="submit" value="Create news item">
+    <input type="submit" name="submit" value="Create blog item">
 </form>

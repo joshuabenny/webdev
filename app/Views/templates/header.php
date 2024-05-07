@@ -1,11 +1,13 @@
 <!doctype html>
 <html>
 <head>
-    <title>Game Stats</title>
+    <title>Valorant Hub</title>
     <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="3600">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
@@ -21,10 +23,10 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?=base_url()?>news">News</a>
+          <a class="nav-link" href="<?=base_url()?>blogs">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?=base_url()?>news/new">Create News</a>
+          <a class="nav-link" href="<?=base_url()?>agents">Agents</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?=base_url()?>about">About</a>
@@ -34,4 +36,5 @@
     </div>
   </div>
 </nav>
-    <h1><?= esc($title) ?></h1>
+
+  <!-- <h1><?= esc($title) ?></h1> -->
