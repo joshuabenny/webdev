@@ -4,6 +4,7 @@ use CodeIgniter\Router\RouteCollection;
 use App\Controllers\Pages;
 use App\Controllers\Blogs;
 use App\Controllers\Agents;
+use App\Controllers\Search;
 
 /**
  * @var RouteCollection $routes
@@ -19,3 +20,5 @@ $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
 
 $routes->get('agents', [Agents::class, 'index']);
+
+$routes->get('search/searchSuggestions', 'Search::searchSuggestions');

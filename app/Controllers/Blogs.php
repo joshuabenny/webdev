@@ -13,7 +13,7 @@ class Blogs extends BaseController
 
         $data = [
             'blogs'  => $model->getBlogs(),
-            'title' => 'Blogs archive',
+            'title' => 'Valorant Blogs',
         ];
 
         return view('templates/header', $data)

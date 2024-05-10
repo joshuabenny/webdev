@@ -1,33 +1,43 @@
-footer {
-    background-color: white;
-    color: black;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position:   fixed;
-    bottom: 0;
+.i-item {
+    height: 480px;
+    border-radius: 15px;
 
+}
+
+.i-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    border-radius: 400px;
 }
    
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+html{
+    height: 100%;
+    box-sizing: border-box;
 }
 
+body {
+    background-image: url("/css/valback.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding-bottom: 10rem;
+    box-sizing: inherit;
+}
 
 #servercent {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 100vh;
+    padding-top: 10%;
 }
-
 
 #content {
     margin-bottom: 100px;
@@ -38,21 +48,87 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.container-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+
+}
+
 .agent-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 20px;
+    border: 2px solid #ff9999;
+    border-radius: 15px;
 }
+
 .agent-button {
     margin: 5px;
+    border-radius: 15px;
+    background-color: yellow
 }
+
+
 .agent-info {
     display: none;
     max-width: 600px;
     text-align: left;
     border: 2px solid #007bff;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 10px;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: #cce5ff;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 35px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#title-server {
+    font-weight: bold;
+    color: white;
+}
+
+.result-container {
+    border: 1px solid #ccc;
+    background-color: red;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+#resultText {
+    font-weight: bold;
+    color: white;
+}
+
+
+.lilita-one-regular {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+#val {
+    text-decoration: none;
+    color: white;
+}
+
+#val:hover {
+    color: blue;
 }

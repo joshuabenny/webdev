@@ -1,9 +1,11 @@
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
-    <footer id="footer">
-        <i>&copy;2024 All agent information from <a href="https://valorant-api.com">valorant-api.com</a><br>
-        Live data depends on the API and the game developers</i>
+<footer>
+        <div class="footer-content">
+            <div class="server-location">
+                <p>All agent information from <a href="https://valorant-api.com">valorant-api.com</a> - All server locations from <a href="https://nominatim.org/">nominatim.org</a></p>
+            </div>
+        </div>
+        <p class="website-name">&copy; 2024 Valo Hub</p>
     </footer>
+    
 </body>
 </html>

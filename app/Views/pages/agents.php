@@ -1,35 +1,8 @@
-<style>
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .agent-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .agent-button {
-            margin: 5px;
-        }
-        .agent-info {
-            display: none;
-            max-width: 600px;
-            text-align: left;
-            border: 2px solid #007bff;
-            border-radius: 10px;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-        </style>
-
-<body>
-    <div class="container">
+<div class="container">
         <h1>Valorant Agents</h1>
         <div class="agent-buttons">
             <?php
-            // Fetch data from the API
+            // Grbbing the cool api :p
             $agents_json = file_get_contents('https://valorant-api.com/v1/agents');
             $agents_data = json_decode($agents_json);
 
@@ -82,4 +55,3 @@
             });
         });
     </script>
-</body>
