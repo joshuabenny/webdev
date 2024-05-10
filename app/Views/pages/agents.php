@@ -67,7 +67,6 @@
         </div>
     </div>
     <script>
-        // JavaScript to show/hide agent info on button click
         const agentButtons = document.querySelectorAll('.agent-button');
         agentButtons.forEach(button => {
             button.addEventListener('click', () => {
