@@ -77,4 +77,47 @@ class Blogs extends BaseController
             . view('blogs/success')
             . view('templates/footer');
     }
+    
+    public function edit($id = null)
+    {
+        helper('form');
+        $model = model(BlogsModel::class);
+        $data['blogs'] = $model->find($id);
+        if (empty($data['blogs'])) {
+            throw new PageNotFoundException('Cannot find the blogs item: ' . $id);
+        }
+        $data['title'] = 'Edit blogs item';
+        return view('templates/header', $data)
+            . view('blogs/edit')
+            . view('templates/footer');
+    }
+
+    public function update($id = null)
+    {
+        helper('form');
+        $model = model(BlogsModel::class);
+        $data = $this->request->getPost(['title', 'body']);
+        if (! $this->validateData($data, [
+            'title' => 'required|max_length[255]|min_length[3]',
+            'body'  => 'required|max_length[5000]|min_length[10]',
+        ])) {
+            return $this->edit($id);
+        }
+        $post = $this->validator->getValidated();
+        $model->updateBlogs($id, [
+            'title' => $post['title'],
+            'slug'  => url_title($post['title'], '-', true),
+            'body'  => $post['body'],
+        ]);
+        return view('templates/header', ['title' => 'Edit blogs item'])
+            . view('blogs/success')
+            . view('templates/footer');
+    }
+
+    public function delete($id)
+    {
+        $model = model(BlogsModel::class);
+        $model->deleteBlogs($id);
+        return redirect()->to('/blogs');
+    }
 }

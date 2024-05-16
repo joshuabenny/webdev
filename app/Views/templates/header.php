@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Valorant Hub</title>
+    <title>Valo Hub</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Valo Hub</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-          <a class="nav-link active" href="<?=base_url()?>home">Home</a>
+          <a class="nav-link" href="<?=base_url()?>home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?=base_url()?>agents">Agents</a>
@@ -49,47 +49,46 @@
 
   <!-- <h1><?= esc($title) ?></h1> -->
 
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
-  <script>
-$(document).ready(function () {
-            $('#search-input').on('keyup', function () {
-                let query = $(this).val();
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function () {
+    $('#search-input').on('keyup', function () {
+      let query = $(this).val();
 
-                if (query.length > 1) { // Start suggesting after 2+ characters
-                    $.ajax({
-                        url: '<?= base_url("search/searchSuggestions") ?>',
-                        method: 'GET',
-                        data: { query: query },
-                        success: function (data) {
-                            let suggestions = $('#suggestions');
-                            suggestions.empty(); // Clear previous suggestions
+      if (query.length > 1) { // Start suggesting after 2+ characters
+        $.ajax({
+        url: '<?= base_url("search/searchSuggestions") ?>',
+        method: 'GET',
+        data: { query: query },
+        success: function (data) {
+          let suggestions = $('#suggestions');
+          suggestions.empty(); // Clear previous suggestions
 
-                            if (data.length > 0) {
-                                suggestions.show(); // Show suggestions box
+          if (data.length > 0) {
+            suggestions.show(); // Show suggestions box
 
-                                data.forEach(function (item) {
-                                    suggestions.append(
-                                        `<div class="m-1 p-1 suggestion-item d-flex align-items-center" data-slug="${item.Slug}">
-                                            ${item.Title}
-                                        </div>`
-                                    );
-                                });
+            data.forEach(function (item) {
+              suggestions.append(
+                `<div class="m-1 p-1 suggestion-item d-flex align-items-center" data-slug="${item.Slug}">
+                ${item.Title}
+                </div>`
+              );
+          });
 
-                                // Handle click events to navigate
-                                $('.suggestion-item').on('click', function () {
-                                    let slug = $(this).data('slug');
-                                    window.location.href = `<?= base_url("blogs/") ?>${slug}`;
-                                });
-                            } else {
-                                suggestions.hide(); // Hide if no suggestions
-                            }
-                        }
-                    });
-                } else {
-                    $('#suggestions').empty().hide(); // Clear and hide if query is too short
-                }
-            });
-        });
-
+          // Handle click events to navigate
+          $('.suggestion-item').on('click', function () {
+            let slug = $(this).data('slug');
+            window.location.href = `<?= base_url("blogs/") ?>${slug}`;
+          });
+        } else {
+            suggestions.hide(); // Hide if no suggestions
+          }
+          }
+          });
+      } else {
+        $('#suggestions').empty().hide(); // Clear and hide if query is too short
+      }
+    });
+  });
 </script>

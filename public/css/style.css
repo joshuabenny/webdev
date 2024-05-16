@@ -1,3 +1,5 @@
+/* carousel */
+
 .i-item {
     height: 480px;
     border-radius: 15px;
@@ -10,7 +12,9 @@
     filter: brightness(0.6);
     border-radius: 400px;
 }
-   
+
+/* /////////////////////////////////////////// */
+
 html{
     height: 100%;
     box-sizing: border-box;
@@ -34,7 +38,7 @@ body {
     font-style: normal;
 }
 
-
+/* ///find server/// */
 #servercent {
     display: flex;
     flex-direction: column;
@@ -42,6 +46,53 @@ body {
     height: 100vh;
     padding-top: 10%;
 }
+
+.bttn_use_location {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .bttn_use_location:hover {
+    background-color: #45a049;
+  }
+  
+  .bttn_use_location:active {
+    background-color: #398438;
+}
+
+#title-server {
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-spacing: 60px;
+}
+
+.result-container {
+    border: 1px solid #ccc;
+    background-color: red;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+
+#resultText {
+    font-weight: bold;
+    color: white;
+}
+
+/* ///agent and other styles/// */
 
 #content {
     margin-bottom: 100px;
@@ -76,7 +127,6 @@ body {
     background-color: yellow
 }
 
-
 .agent-info {
     display: none;
     max-width: 600px;
@@ -90,7 +140,16 @@ body {
     background-color: #cce5ff;
 }
 
+/* ///blog-post/// */
+#succ {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
 
+/* /////////////////////////// */
 
 footer {
     background-color: #333;
@@ -103,30 +162,13 @@ footer {
     bottom: 0;
 }
 
-#title-server {
-    font-weight: bold;
-    color: white;
-}
 
-.result-container {
-    border: 1px solid #ccc;
-    background-color: red;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 15px;
-}
-
-#resultText {
-    font-weight: bold;
-    color: white;
-}
-
-
+/* FONT */
 .lilita-one-regular {
     font-family: "Lilita One", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
   
 #val {
     text-decoration: none;
@@ -135,4 +177,56 @@ footer {
 
 #val:hover {
     color: blue;
+}
+
+
+/* BUTTONS */
+
+.button {
+    display: inline-block;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.del_button:hover{
+    color: blue !important;
+}
+
+.button_location {
+    display: inline-block;
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.form-container {
+    border: 10px solid #007bff;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #cce5ff;
+}
+
+
+/* ///background for reading/// */
+h2 {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
 }

@@ -17,4 +17,14 @@ class BlogsModel extends Model
 
         return $this->where(['slug' => $slug])->first();
     }
+
+    public function updateBlogs($id, $data)
+    {
+        return $this->update($id, $data);
+    }
+
+    public function deleteBlogs($id)
+    {
+        return $this->delete($id);
+    }
 }

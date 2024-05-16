@@ -1,19 +1,6 @@
-<style>
-    .button {
-        display: inline-block;
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        padding: 10px 20px;
-    }
-</style>
-
 <div class="m-5 p-5" style="text-align: center; background-color: #f2f2f2; display: inline-block; border-radius: 15px;">
+    <a class="button" href="<?=base_url()?>blogs/new">Create Blog</a>
+
     <h1><?= esc($title) ?></h1>
 
     <?php if (! empty($blogs) && is_array($blogs)): ?>
@@ -29,6 +16,11 @@
                 <?= esc($blogs_item['date']) ?>
             </div>
             <a href="/blogs/<?= esc($blogs_item['slug'], 'url') ?>" class="button">View blogs</a>
+            <a href="/blogs/edit/<?= esc($blogs_item['id']) ?>" class="button">Edit blogs</a>
+            <form action="/blogs/delete/<?= esc($blogs_item['id']) ?>" method="post" style="display:inline">
+                    <?= csrf_field() ?>
+                    <button class="button del_button" type="submit" onclick="return confirm('Are you sure you want to delete this item?')">Delete</button>
+                </form>
 
         <?php endforeach ?>
         

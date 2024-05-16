@@ -16,9 +16,14 @@ $routes->get('blogs/new', [Blogs::class, 'new']);
 $routes->post('blogs', [Blogs::class, 'create']);
 $routes->get('blogs/(:segment)', [Blogs::class, 'show']);
 
+$routes->get('blogs/edit/(:segment)', [Blogs::class, 'edit']);
+$routes->post('blogs/update/(:segment)', [Blogs::class, 'update']); 
+$routes->post('blogs/delete/(:segment)', [Blogs::class, 'delete']);
+
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
 
 $routes->get('agents', [Agents::class, 'index']);
 
 $routes->get('search/searchSuggestions', 'Search::searchSuggestions');
+

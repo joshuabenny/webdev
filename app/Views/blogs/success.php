@@ -1,1 +1,1 @@
-<p>Blogs item created successfully.</p>
+<p id="succ">Blogs item created successfully.</p>

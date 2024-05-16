@@ -39,19 +39,20 @@
             ?>
         </div>
     </div>
-    <script>
-        const agentButtons = document.querySelectorAll('.agent-button');
-        agentButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const agentId = button.getAttribute('data-id');
-                const agentInfo = document.getElementById(agentId);
-                const allAgentInfo = document.querySelectorAll('.agent-info');
-                allAgentInfo.forEach(info => {
-                    if (info !== agentInfo) {
-                        info.style.display = 'none';
-                    }
-                });
-                agentInfo.style.display = (agentInfo.style.display === 'block') ? 'none' : 'block';
-            });
+
+<script>
+    const agentButtons = document.querySelectorAll('.agent-button');
+    agentButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const agentId = button.getAttribute('data-id');
+        const agentInfo = document.getElementById(agentId);
+        const allAgentInfo = document.querySelectorAll('.agent-info');
+        allAgentInfo.forEach(info => {
+            if (info !== agentInfo) {
+                info.style.display = 'none';
+            }
         });
-    </script>
+        agentInfo.style.display = (agentInfo.style.display === 'block') ? 'none' : 'block';
+    });
+    });
+</script>
